@@ -4,7 +4,7 @@ import Menu from "./MenuComponent";
 import DishDetail from "./DishDetailComponent";
 import { DISHES } from "../shared/dishes";
 
-class App extends Component {
+class Main extends Component {
   constructor(props) {
     super(props);
 
