@@ -24,8 +24,11 @@ class DishDetail extends Component {
         "Dec",
       ];
       const month = months[date.getMonth()],
-      day = (date.getDate()+1) < 10 ? '0' + (date.getDate()+1) : (date.getDate()+1),
-      year = date.getFullYear();
+        day =
+          date.getDate() + 1 < 10
+            ? "0" + (date.getDate() + 1)
+            : date.getDate() + 1,
+        year = date.getFullYear();
       return (
         <li key={comment.id}>
           <p>{comment.comment}</p>
@@ -51,17 +54,19 @@ class DishDetail extends Component {
     const dish = this.props.dish;
     const comments = dish.comments;
     return (
-      <div className="row">
-        <div className="col-12 col-md-5 m-1">
-          <Card>
-            <CardImg top src={dish.image} alt={dish.name} />
-            <CardBody>
-              <CardTitle>{dish.name}</CardTitle>
-              <CardText>{dish.description}</CardText>
-            </CardBody>
-          </Card>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-5 m-1">
+            <Card>
+              <CardImg top src={dish.image} alt={dish.name} />
+              <CardBody>
+                <CardTitle>{dish.name}</CardTitle>
+                <CardText>{dish.description}</CardText>
+              </CardBody>
+            </Card>
+          </div>
+          {this.renderComments(comments)}
         </div>
-        {this.renderComments(comments)}
       </div>
     );
   }
