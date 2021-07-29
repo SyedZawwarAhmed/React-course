@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "reactstrap";
 
-function RednderMenuItem({ dish, onClick }) {
+function RednderMenuItem({ dish }) {
   return (
     <Card>
       <Link to={`/menu/${dish.id}`}>

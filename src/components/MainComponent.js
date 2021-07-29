@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Home from "./HomeComponent";
+import About from "./AboutComponent";
 import Menu from "./MenuComponent";
 import Contact from "./ContactComponent";
 import DishDetail from "./DishDetailComponent";
@@ -40,6 +41,12 @@ class Main extends Component {
       );
     }
 
+    const AboutWithLeaders = ({match}) => {
+      return (
+        <About leaders={match.params.leaders.split(",")} />
+      );
+    }
+
     return (
       <div>
         <Header />
@@ -50,6 +57,7 @@ class Main extends Component {
             path="/menu"
             component={() => <Menu dishes={this.state.dishes} />}
           />
+          <Route path="/aboutus/" component={() => <About leaders={this.state.leaders} />} />
           <Route path="/menu/:dishId" component={DishWithId} />
           <Route exact path="/contactus" component={Contact} />
           <Redirect to="/home" />
