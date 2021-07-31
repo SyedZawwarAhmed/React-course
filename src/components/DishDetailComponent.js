@@ -91,6 +91,8 @@ class CommentForm extends Component {
                   id="rating"
                   name="rating"
                   type="number"
+                  min="1"
+                  max="5"
                   value={this.state.rating}
                   onChange={this.handleChange}
                 />
