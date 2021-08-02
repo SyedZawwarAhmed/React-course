@@ -1,7 +1,7 @@
 import * as ActionTypes from "./ActionsTypes";
 import { baseUrl } from "../shared/baseUrl";
 
-export const addComment = (dishId, rating, author, comment) => ({
+export const addComment = (comment) => ({
   type: ActionTypes.ADD_COMMENT,
   payload: comment,
 });
@@ -21,7 +21,6 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
     headers: {
       "Content-Type": "application/json",
     },
-    credentials: "same-origin",
   })
     .then(
       (response) => {
@@ -44,7 +43,6 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
     .then((response) => dispatch(addComment(response)))
     .catch((error) => {
       console.log("Post comments", error.message);
-      alert("Your comment could not be posted\nError: " + error.message);
     });
 };
 
