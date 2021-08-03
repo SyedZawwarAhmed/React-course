@@ -17,11 +17,10 @@ import {
   Input,
   Label,
   FormFeedback,
-  Fade,
 } from "reactstrap";
 import { baseUrl } from "../shared/baseUrl";
 import { Loading } from "./LoadingComponent";
-import { FadeTransform, Stagger } from "react-animation-components";
+import { Fade, FadeTransform, Stagger } from "react-animation-components";
 
 class CommentForm extends Component {
   constructor(props) {
